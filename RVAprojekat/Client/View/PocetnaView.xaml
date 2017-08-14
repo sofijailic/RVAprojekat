@@ -1,0 +1,24 @@
+﻿<Window x:Class="Client.View.PocetnaView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Client.View"
+        mc:Ignorable="d"
+        Title="PocetnaView" Height="470.339" Width="689.83">
+    <Grid Margin="0,0,2,0">
+        <Button x:Name="button" Content="Dodaj belesku" HorizontalAlignment="Left" Margin="10,18,0,0" VerticalAlignment="Top" Width="92" Height="29"/>
+        <Button x:Name="button1" Content="Obrisi belesku" HorizontalAlignment="Left" Margin="126,18,0,0" VerticalAlignment="Top" Width="101" Height="29"/>
+        <Button x:Name="button2" Content="Izmeni belesku" HorizontalAlignment="Left" Margin="250,18,0,0" VerticalAlignment="Top" Width="92" Height="29" RenderTransformOrigin="1.795,1.989"/>
+        <Button x:Name="button3" Content="Dodaj belesku" HorizontalAlignment="Left" Margin="360,18,0,0" VerticalAlignment="Top" Width="92" Height="29"/>
+        <Button x:Name="button4" Content="Dupliraj belesku" HorizontalAlignment="Left" Margin="481,18,0,0" VerticalAlignment="Top" Width="92" Height="29"/>
+        <Button x:Name="button5" Content="Ponisti belesku" HorizontalAlignment="Left" Margin="10,76,0,0" VerticalAlignment="Top" Width="92" Height="29"/>
+        <Button x:Name="button6" Content="Undo" HorizontalAlignment="Left" Margin="126,76,0,0" VerticalAlignment="Top" Width="92" Height="29"/>
+        <Button x:Name="button7" Content="Redo" HorizontalAlignment="Left" Margin="250,76,0,0" VerticalAlignment="Top" Width="92" Height="29"/>
+        <Button x:Name="button8" Content="Osvezi belesku" HorizontalAlignment="Left" Margin="360,76,0,0" VerticalAlignment="Top" Width="92" Height="29"/>
+        <Button x:Name="button9" Visibility="{Binding admin}" Content="Dodaj korisnika" Command="{Binding otvoriDodaj}"  HorizontalAlignment="Left" Margin="10,141,0,0" VerticalAlignment="Top" Width="92" Height="29"/>
+        <Button x:Name="button10" Visibility="{Binding admin}" Content="Izmeni korisnika" HorizontalAlignment="Left" Margin="126,141,0,0" VerticalAlignment="Top" Width="92" Height="29"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="10,184,0,0" VerticalAlignment="Top" Height="237" Width="660"/>
+
+    </Grid>
+</Window>

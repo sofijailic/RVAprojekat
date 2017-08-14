@@ -42,6 +42,14 @@ namespace Client.Command
             string password = parameters[1].ToString();
 
             User korisnik = viewModel.proxyKorisnik.UlogujKorisnika(username, password);
+
+            if (korisnik != null)
+            {
+                Sesija.trenutniKorisnik = korisnik;
+                PocetnaView pocetniProzor = new PocetnaView();
+                MainWindow.glavni.Close();
+                pocetniProzor.ShowDialog();
+            }
         }
     }
 }

@@ -42,9 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Beleska.cs" />
     <Compile Include="Data\User.cs" />
+    <Compile Include="Interfaces\IBeleskaDB.cs" />
     <Compile Include="Interfaces\IUserDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sesija.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

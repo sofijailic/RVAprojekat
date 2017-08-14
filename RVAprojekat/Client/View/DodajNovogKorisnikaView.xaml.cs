@@ -11,22 +11,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Client
+namespace Client.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for DodajNovogKorisnikaView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class DodajNovogKorisnikaView : Window
     {
-        public static MainWindow glavni;
-        public MainWindow()
+        public DodajNovogKorisnikaView()
         {
             InitializeComponent();
-            DataContext = new LoginViewModel();
-            glavni = this;
+            DataContext = new DodajKorisnikaViewModel(this);
         }
     }
 }
