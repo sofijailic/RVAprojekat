@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
@@ -10,9 +11,7 @@ namespace Common.Interfaces
     [ServiceContract]
     public interface IBeleskaDB
     {
-        //[OperationContract]
-        // metoda za dodavanje beleske
-
-        // kasnije i za izmenu i brisanje itd...
+        [OperationContract]
+        bool dodavanjeBeleske( Beleska beleska);
     }
 }

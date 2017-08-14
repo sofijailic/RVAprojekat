@@ -15,6 +15,7 @@ namespace Client.ViewModel
 
         public string admin { get; set; }
         public OtvoriProzorDodajKorisnikaCommand otvoriDodaj { get; set; }
+        public otvoriProzorDodajBeleskuCommand otvoriProzorDodajBelesku { get; set; }
 
         public PocetnaViewModel() {
 
@@ -27,6 +28,7 @@ namespace Client.ViewModel
 
 
             this.otvoriDodaj = new OtvoriProzorDodajKorisnikaCommand();
+            this.otvoriProzorDodajBelesku = new otvoriProzorDodajBeleskuCommand();
         }
 
         public void OnPropertyChanged(PropertyChangedEventArgs e)
