@@ -21,16 +21,18 @@ namespace Client.ViewModel
         public List<string> listaBeleskiPrikaz { get; set; }
 
         public string admin { get; set; }
+        public IBeleskaDB proxyBeleska;
+        public string selektovanaBeleska { get; set; }
+
         public OtvoriProzorDodajKorisnikaCommand otvoriDodaj { get; set; }
         public otvoriProzorDodajBeleskuCommand otvoriProzorDodajBelesku { get; set; }
         public otvoriProzorIzmeniBeleskuCommand otvoriIzmeni { get; set; }
         public otvoriProzorIzmeniPodatkeCommand otvoriPodatke { get; set; }
-        public string selektovanaBeleska { get; set; }
+        
 
         public OsveziBeleskuCommand osvezi { get; set; }
         public ObrisiBeleskuCommand obrisi { get; set; }
-
-        public IBeleskaDB proxyBeleska;
+        public KlonirajBeleskuCommand kloniraj { get; set; }
 
         public PocetnaViewModel() {
 
@@ -49,6 +51,7 @@ namespace Client.ViewModel
 
             this.osvezi = new OsveziBeleskuCommand(this);
             this.obrisi = new ObrisiBeleskuCommand(this);
+            this.kloniraj = new KlonirajBeleskuCommand(this);
 
             NetTcpBinding binding = new NetTcpBinding();
             binding.TransactionFlow = true;

@@ -13,6 +13,7 @@ namespace Client.Command
     class DodajNovuBeleskuCommand : ClientCommand
     {
         private DodajNovuBeleskuViewModel prozorModel;
+       // private Beleska beleskaZaDodavanjeDodatno;
 
         public DodajNovuBeleskuCommand(DodajNovuBeleskuViewModel proz ) {
             this.prozorModel = proz;
@@ -80,6 +81,11 @@ namespace Client.Command
                 prozorModel.prozor.Close();
             }
             else MessageBox.Show("Neuspesno dodato!", "Neuspeh");
+        }
+
+        public override void UnExecute()
+        {
+            throw new NotImplementedException();
         }
     }
 }

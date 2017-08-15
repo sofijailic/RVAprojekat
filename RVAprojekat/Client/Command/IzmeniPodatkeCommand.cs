@@ -60,5 +60,10 @@ namespace Client.Command
             }
             else MessageBox.Show("Izmena korisnika nije uspela", "Neuspeh");
         }
+
+        public override void UnExecute()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

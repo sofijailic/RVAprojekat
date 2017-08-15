@@ -51,5 +51,10 @@ namespace Client.Command
                 pocetniProzor.ShowDialog();
             }
         }
+
+        public override void UnExecute()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

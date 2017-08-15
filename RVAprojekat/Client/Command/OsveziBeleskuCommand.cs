@@ -18,5 +18,10 @@ namespace Client.Command
         {
             model.OsveziPocetnu();
         }
+
+        public override void UnExecute()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

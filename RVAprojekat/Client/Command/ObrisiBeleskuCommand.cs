@@ -19,5 +19,10 @@ namespace Client.Command
             int id = Int32.Parse(model.selektovanaBeleska.Split('-')[0]);
             model.proxyBeleska.obrisiBelesku(id);
         }
+
+        public override void UnExecute()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

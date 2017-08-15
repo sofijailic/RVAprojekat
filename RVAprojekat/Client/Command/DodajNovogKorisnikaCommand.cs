@@ -80,5 +80,10 @@ namespace Client.Command
 
         
     }
+
+        public override void UnExecute()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\Beleska.cs" />
+    <Compile Include="Data\BeleskaPrototip.cs" />
     <Compile Include="Data\User.cs" />
     <Compile Include="Interfaces\IBeleskaDB.cs" />
     <Compile Include="Interfaces\IUserDB.cs" />
