@@ -45,5 +45,64 @@ namespace Server.Access
 
             }
         }
+
+        public bool izmeniBelesku(Beleska beleska)
+        {
+            using (var access = new AccessDB())
+            {
+                Beleska bel = access.Beleske.First(x => x.Id == beleska.Id);
+                bel.Naslov = beleska.Naslov;
+                bel.Sadrzaj = beleska.Sadrzaj;
+                bel.Grupe = beleska.Grupe;
+                int i = access.SaveChanges();
+
+                return (i > 0 ? true : false);
+            }
+        }
+
+        public Beleska uzmiBeleksuPoId(int id)
+        { 
+            using (var access = new AccessDB())
+            {
+                var beleske = access.Beleske;
+
+                foreach (var beleska in beleske)
+                {
+                    if (beleska.Id == id)
+                    {
+                        return beleska;
+                    }
+                }
+            }
+            return null;
+        
+    }
+
+        public List<Beleska> uzmiBeleskeOdKorisnika(User u)
+        {
+            List<Beleska> listaBeleski = new List<Beleska>();
+            string[] korisnickeGrupe = u.Grupe.Split(';');
+            using (var access = new AccessDB())
+            {
+                var beleske = access.Beleske;
+
+                foreach (var beleska in beleske)
+                {
+                    foreach (string grupa in korisnickeGrupe)
+                    {
+                        if (beleska.Grupe.Contains(grupa))
+                        {
+                            listaBeleski.Add(beleska);
+                            break;
+                        }
+                    }
+                }
+
+            }
+
+            return listaBeleski;
+        }
+
+
     }
 }

@@ -13,5 +13,14 @@ namespace Common.Interfaces
     {
         [OperationContract]
         bool dodavanjeBeleske( Beleska beleska);
+
+        [OperationContract]
+        List<Beleska> uzmiBeleskeOdKorisnika(User u);
+
+        [OperationContract]
+        Beleska uzmiBeleksuPoId(int id);
+
+        [OperationContract]
+        bool izmeniBelesku(Beleska beleska);
     }
 }

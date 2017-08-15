@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Client.Command.OtvoriProzorKomande
 {
-    class OtvoriProzorDodajKorisnikaCommand :ClientCommand
+    public class OtvoriProzorDodajKorisnikaCommand :ClientCommand
     {
         public override void Execute(object parameter)
         {

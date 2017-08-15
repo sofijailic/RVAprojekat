@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Client.Command.OtvoriProzorKomande
 {
-    class otvoriProzorDodajBeleskuCommand : ClientCommand
+    public class otvoriProzorDodajBeleskuCommand : ClientCommand
     {
         public override void Execute(object parameter)
         {

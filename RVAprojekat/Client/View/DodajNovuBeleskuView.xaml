@@ -27,9 +27,9 @@
         <Label x:Name="label2" Content="Sadrzaj" HorizontalAlignment="Left" Margin="15.385,172,0,0" VerticalAlignment="Top" Width="58" Grid.Column="1"/>
         <toolkit:RichTextBox Text="{Binding Sadrzaj,Mode=OneWayToSource}" x:Name="richSadrzaj" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="289" Margin="6.385,203,0,0" Grid.Column="1"/>
         <Label x:Name="label3" Content="Grupe" HorizontalAlignment="Left" Margin="18.385,327,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.184,-0.062" Grid.Column="1"/>
-        <CheckBox x:Name="checkBoxPolitika" Content="Politika" HorizontalAlignment="Left" Margin="15.385,367,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-        <CheckBox x:Name="checkBoxZabava" Content="Zabava" HorizontalAlignment="Left" Margin="108.385,367,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-        <CheckBox x:Name="checkBoxSport" Content="Sport" HorizontalAlignment="Left" Margin="196.385,367,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <CheckBox x:Name="checkBoxPolitika" IsEnabled="{Binding Path=politikaDostupan}" Content="Politika" HorizontalAlignment="Left" Margin="15.385,367,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <CheckBox x:Name="checkBoxZabava" IsEnabled="{Binding Path=zabavaDostupan}" Content="Zabava" HorizontalAlignment="Left" Margin="108.385,367,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <CheckBox x:Name="checkBoxSport" IsEnabled="{Binding Path=sportDostupan}" Content="Sport" HorizontalAlignment="Left" Margin="196.385,367,0,0" VerticalAlignment="Top" Grid.Column="1"/>
         <Button x:Name="button" Command="{Binding dodajBeleskuKomanda}" Content="Dodaj Belesku" HorizontalAlignment="Left" Margin="275.385,389,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1">
             <Button.CommandParameter>
                 <MultiBinding Converter="{StaticResource multiCloner}">

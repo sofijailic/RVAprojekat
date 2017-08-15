@@ -85,12 +85,16 @@
     <Compile Include="Command\ClientCommand.cs" />
     <Compile Include="Command\DodajNovogKorisnikaCommand.cs" />
     <Compile Include="Command\DodajNovuBeleskuCommand.cs" />
+    <Compile Include="Command\IzmeniBeleskuCommand.cs" />
     <Compile Include="Command\LoginCommand.cs" />
+    <Compile Include="Command\OsveziBeleskuCommand.cs" />
     <Compile Include="Command\OtvoriProzorKomande\otvoriProzorDodajBeleskuCommand.cs" />
     <Compile Include="Command\OtvoriProzorKomande\OtvoriProzorDodajKorisnikaCommand.cs" />
+    <Compile Include="Command\OtvoriProzorKomande\otvoriProzorIzmeniBeleskuCommand.cs" />
     <Compile Include="Converter\MultiCloneConverter.cs" />
     <Compile Include="ViewModel\DodajKorisnikaViewModel.cs" />
     <Compile Include="ViewModel\DodajNovuBeleskuViewModel.cs" />
+    <Compile Include="ViewModel\IzmeniBeleskuViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\PocetnaViewModel.cs" />
     <Compile Include="View\DodajNovogKorisnikaView.xaml.cs">
@@ -98,6 +102,9 @@
     </Compile>
     <Compile Include="View\DodajNovuBeleskuView.xaml.cs">
       <DependentUpon>DodajNovuBeleskuView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\IzmeniBeleskuView.xaml.cs">
+      <DependentUpon>IzmeniBeleskuView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
@@ -122,6 +129,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\DodajNovuBeleskuView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\IzmeniBeleskuView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

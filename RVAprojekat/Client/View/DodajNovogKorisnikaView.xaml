@@ -32,9 +32,16 @@
                     <Binding Path="Text" ElementName="textBoxLozinka"/>
                     <Binding Path="Text" ElementName="textBoxIme"/>
                     <Binding Path="Text" ElementName="textBoxPrezime"/>
+                    <Binding Path="IsChecked" ElementName="checkBoxPolitika"/>
+                    <Binding Path="IsChecked" ElementName="checkBoxZabava"/>
+                    <Binding Path="IsChecked" ElementName="checkBoxSport"/>
+
                 </MultiBinding>
             </Button.CommandParameter>
         </Button>
+        <CheckBox x:Name="checkBoxPolitika" Content="Politika" HorizontalAlignment="Left" Margin="345,45,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="checkBoxZabava" Content="Zabava" HorizontalAlignment="Left" Margin="345,66,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="checkBoxSport" Content="Sport" HorizontalAlignment="Left" Margin="345,87,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
