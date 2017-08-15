@@ -60,6 +60,19 @@ namespace Server.Access
             }
         }
 
+        public bool obrisiBelesku(int id)
+        {
+            using (var access = new AccessDB())
+            {
+                var beleska = new Beleska { Id = id };
+                access.Beleske.Attach(beleska);
+                access.Beleske.Remove(beleska);
+                int success = access.SaveChanges();
+
+                return (success > 0 ? true : false);
+            }
+        }
+
         public Beleska uzmiBeleksuPoId(int id)
         { 
             using (var access = new AccessDB())

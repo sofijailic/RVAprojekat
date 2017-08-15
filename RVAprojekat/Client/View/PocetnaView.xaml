@@ -14,13 +14,13 @@
             <ColumnDefinition Width="28*"/>
         </Grid.ColumnDefinitions>
         <Button x:Name="button" Content="Dodaj belesku" Command="{Binding otvoriProzorDodajBelesku}" HorizontalAlignment="Left" Margin="10,42,0,0" VerticalAlignment="Top" Width="92" Height="29"/>
-        <Button x:Name="button1" Content="Obrisi belesku" HorizontalAlignment="Left" Margin="126,42,0,0" VerticalAlignment="Top" Width="101" Height="29"/>
+        <Button x:Name="button1" Command="{Binding obrisi}" Content="Obrisi belesku" HorizontalAlignment="Left" Margin="126,42,0,0" VerticalAlignment="Top" Width="101" Height="29"/>
         <Button x:Name="button2" Command="{Binding otvoriIzmeni}" Content="Izmeni belesku" HorizontalAlignment="Left" Margin="250,42,0,0" VerticalAlignment="Top" Width="92" Height="29" RenderTransformOrigin="1.795,1.989"/>
-        <Button x:Name="button3" Content="Izmeni podatke " HorizontalAlignment="Left" Margin="472,42,0,0" VerticalAlignment="Top" Width="92" Height="29"/>
+        <Button x:Name="button3" Command="{Binding otvoriPodatke}" Content="Izmeni podatke " HorizontalAlignment="Left" Margin="472,42,0,0" VerticalAlignment="Top" Width="92" Height="29"/>
         <Button x:Name="button4" Content="Dupliraj belesku" HorizontalAlignment="Left" Margin="360,42,0,0" VerticalAlignment="Top" Width="92" Height="29"/>
         <Button x:Name="button6" Content="Undo" HorizontalAlignment="Left" Margin="10,86,0,0" VerticalAlignment="Top" Width="92" Height="29"/>
         <Button x:Name="button7" Content="Redo" HorizontalAlignment="Left" Margin="135,86,0,0" VerticalAlignment="Top" Width="92" Height="29"/>
-        <Button x:Name="button8" Command="{Binding osvezi}" Content="Osvezi belesku" HorizontalAlignment="Left" Margin="250,86,0,0" VerticalAlignment="Top" Width="92" Height="29"/>
+        <Button x:Name="button8" Command="{Binding osvezi}" Content="Osvezi beleske" HorizontalAlignment="Left" Margin="250,86,0,0" VerticalAlignment="Top" Width="92" Height="29"/>
         <Button x:Name="button9" Visibility="{Binding admin}" Content="Dodaj korisnika" Command="{Binding otvoriDodaj}"  HorizontalAlignment="Left" Margin="10,141,0,0" VerticalAlignment="Top" Width="92" Height="29"/>
         <Button x:Name="button10" Visibility="{Binding admin}" Content="Izmeni korisnika" HorizontalAlignment="Left" Margin="126,141,0,0" VerticalAlignment="Top" Width="92" Height="29"/>
         <Label x:Name="label" Content="                                    PISANJE BELESKI" HorizontalAlignment="Left" Margin="179,0,0,0" VerticalAlignment="Top" Height="37" Width="375"/>

@@ -16,5 +16,8 @@ namespace Common.Interfaces
 
         [OperationContract]
         bool DodajKorisnika(User noviKorisnik);
+
+        [OperationContract]
+        bool IzmeniPodatke(User u);
     }
 }
