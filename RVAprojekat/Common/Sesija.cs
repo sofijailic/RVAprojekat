@@ -10,5 +10,7 @@ namespace Common
     public class Sesija
     {
         public static User trenutniKorisnik = new User();
+        public static List<Beleska> listaBeleskiUndo = new List<Beleska>();
+        public static List<Beleska> listaBeleskiRedo = new List<Beleska>();
     }
 }

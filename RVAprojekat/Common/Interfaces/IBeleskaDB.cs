@@ -12,7 +12,7 @@ namespace Common.Interfaces
     public interface IBeleskaDB
     {
         [OperationContract]
-        bool dodavanjeBeleske( Beleska beleska);
+        Beleska dodavanjeBeleske( Beleska beleska);
 
         [OperationContract]
         List<Beleska> uzmiBeleskeOdKorisnika(User u);
@@ -25,5 +25,8 @@ namespace Common.Interfaces
 
         [OperationContract]
         bool obrisiBelesku(int Id);
+
+        [OperationContract]
+        List<Beleska> uzmiSveBeleske();
     }
 }

@@ -1,0 +1,45 @@
+﻿<Window x:Class="Klijent.View.ViewKorisnika.DodajKorisnikaView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Klijent.View.ViewKorisnika"
+        xmlns:converter="clr-namespace:Klijent.Konverter"
+        mc:Ignorable="d"
+        Title="DodajKorisnikaView" Height="309.231" Width="554.615">
+
+    <Window.Resources>
+        <converter:MultiCloneConverter x:Key="multiCloner"/>
+    </Window.Resources>
+    <Grid>
+        <Label x:Name="label" Content="Dodavanje  novog korisnika" HorizontalAlignment="Left" Margin="123,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="Korisnicko ime" HorizontalAlignment="Left" Margin="23,92,0,0" VerticalAlignment="Top" Width="94"/>
+        <Label x:Name="label1_Copy" Content="Lozinka" HorizontalAlignment="Left" Margin="23,123,0,0" VerticalAlignment="Top" Width="94"/>
+        <Label x:Name="label1_Copy1" Content="Ime" HorizontalAlignment="Left" Margin="23,162,0,0" VerticalAlignment="Top" Width="94"/>
+        <Label x:Name="label1_Copy2" Content="Prezime" HorizontalAlignment="Left" Margin="23,204,0,0" VerticalAlignment="Top" Width="94"/>
+        <TextBox x:Name="korisnickoIme" HorizontalAlignment="Left" Height="23" Margin="152,92,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
+        <TextBox x:Name="lozinka" HorizontalAlignment="Left" Height="23" Margin="152,126,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
+        <TextBox x:Name="ime" HorizontalAlignment="Left" Height="23" Margin="152,162,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
+        <TextBox x:Name="prezime" HorizontalAlignment="Left" Height="23" Margin="152,204,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
+        <CheckBox x:Name="cPolitika" Content="politika" HorizontalAlignment="Left" Margin="437,96,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="cZabava" Content="zabava" HorizontalAlignment="Left" Margin="439,117,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="cSport" Content="sport" HorizontalAlignment="Left" Margin="439,138,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="Grupe:" HorizontalAlignment="Left" Margin="394,55,0,0" VerticalAlignment="Top" Width="128"/>
+        <Label x:Name="label2_Copy" Content="Podaci:" HorizontalAlignment="Left" Margin="17,55,0,0" VerticalAlignment="Top" Width="128"/>
+        <Button x:Name="button" Content="Dodaj" Command="{Binding dodajKorisnika}" HorizontalAlignment="Left" Margin="23,247,0,0" VerticalAlignment="Top" Width="75">
+            <Button.CommandParameter>
+                <MultiBinding Converter="{StaticResource multiCloner}">
+                    <Binding Path="Text" ElementName="korisnickoIme"/>
+                    <Binding Path="Text" ElementName="lozinka"/>
+                    <Binding Path="Text" ElementName="ime"/>
+                    <Binding Path="Text" ElementName="prezime"/>
+                    <Binding Path="IsChecked" ElementName="cPolitika"/>
+                    <Binding Path="IsChecked" ElementName="cZabava"/>
+                    <Binding Path="IsChecked" ElementName="cSport"/>
+
+                </MultiBinding>
+            </Button.CommandParameter>
+        </Button>
+
+    </Grid>
+</Window>

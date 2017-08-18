@@ -28,7 +28,7 @@ namespace Server.Access
             }
         }
 
-        public bool dodavanjeBeleske(Beleska newBeleska)
+        public Beleska dodavanjeBeleske(Beleska newBeleska)
         {
             using (var access = new AccessDB())
             {
@@ -39,9 +39,9 @@ namespace Server.Access
 
                 if (uspesno > 0)
                 {
-                    return true;
+                    return newBeleska;
                 }
-                else return false;
+                else return null;
 
             }
         }
@@ -53,7 +53,6 @@ namespace Server.Access
                 Beleska bel = access.Beleske.First(x => x.Id == beleska.Id);
                 bel.Naslov = beleska.Naslov;
                 bel.Sadrzaj = beleska.Sadrzaj;
-                bel.Grupe = beleska.Grupe;
                 int i = access.SaveChanges();
 
                 return (i > 0 ? true : false);
@@ -64,13 +63,26 @@ namespace Server.Access
         {
             using (var access = new AccessDB())
             {
-                var beleska = new Beleska { Id = id };
-                access.Beleske.Attach(beleska);
-                access.Beleske.Remove(beleska);
-                int success = access.SaveChanges();
+                var beleske = access.Beleske;
 
-                return (success > 0 ? true : false);
+                foreach (var item in beleske)
+                {
+                    if (item.Id == id)
+                    {
+                        access.Beleske.Remove(item);
+                        break;
+                    }
+                }
+
+                int i = access.SaveChanges();
+                if (i > 0)
+                {
+                    return true;
+                }
+                else
+                    return false;
             }
+
         }
 
         public Beleska uzmiBeleksuPoId(int id)
@@ -116,6 +128,13 @@ namespace Server.Access
             return listaBeleski;
         }
 
-
+        public List<Beleska> uzmiSveBeleske()
+        {
+            using (var access = new AccessDB())
+            {
+                var beleske = access.Beleske;
+                return (List<Beleska>)beleske.ToList();
+            }
+        }
     }
 }

@@ -19,5 +19,11 @@ namespace Common.Interfaces
 
         [OperationContract]
         bool IzmeniPodatke(User u);
+
+        [OperationContract]
+        List<User> uzmiSveKorisnike();
+
+        [OperationContract]
+        bool promeniGrupe(User u);
     }
 }

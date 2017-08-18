@@ -12,10 +12,10 @@ namespace Client.Command
     class DodajNovogKorisnikaCommand : ClientCommand
     {
 
-        private DodajKorisnikaViewModel dodajModel;
-        public DodajNovogKorisnikaCommand(DodajKorisnikaViewModel dodajKViewModel) {
+        private DodajKorisnikaViewModel model;
+        public DodajNovogKorisnikaCommand(DodajKorisnikaViewModel mod) {
 
-            this.dodajModel = dodajKViewModel;
+            this.model = mod;
         }
         public override void Execute(object parameter)
         {
@@ -57,12 +57,12 @@ namespace Client.Command
                 grupe += ";Sport";
             }
 
-            bool success = dodajModel.proxyKorisnik.DodajKorisnika(new User()
+            bool success = model.proxyKorisnik.DodajKorisnika(new User()
             {
                 Username = parameters[0].ToString(),
+                Password = parameters[1].ToString(),
                 Ime = parameters[2].ToString(),
                 Prezime = parameters[3].ToString(),
-                Password = parameters[1].ToString(),
                 Admin = false,
                 Grupe = grupe
             });
@@ -70,7 +70,7 @@ namespace Client.Command
             if (success)
             {
                 MessageBox.Show("Uspesno dodat korisnik " + parameters[0].ToString(), "Uspeh");
-                dodajModel.prozor.Close();
+                model.prozor.Close();
             }
             else
             {

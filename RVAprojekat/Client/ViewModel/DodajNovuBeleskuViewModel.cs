@@ -23,10 +23,12 @@ namespace Client.ViewModel
         public string zabavaDostupan { get; set; }
         public string sportDostupan { get; set; }
 
+        public PocetnaViewModel model;
+
         public IBeleskaDB proxyBeleska;
-        public DodajNovuBeleskuViewModel(DodajNovuBeleskuView proz) {
+        public DodajNovuBeleskuViewModel(DodajNovuBeleskuView proz ,PocetnaViewModel mod) {
 
-
+            this.model = mod;
             this.dodajBeleskuKomanda = new DodajNovuBeleskuCommand(this);
             this.prozor = proz;
 

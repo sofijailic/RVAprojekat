@@ -19,9 +19,10 @@ namespace Client.ViewModel
 
         public IzmeniBeleskuView proz { get; set; }
         public IzmeniBeleskuCommand izmena { get; set; }
+        public Beleska originalBeleska { get; set; }
 
         private int Id;
-        public Beleska beleskaZaIzmenu { get; set; }
+        public Beleska mojaIzmenjenaBeleska { get; set; }
         public PocetnaViewModel model { get; set; }
 
 
@@ -51,20 +52,26 @@ namespace Client.ViewModel
             ChannelFactory<IBeleskaDB> factory = new ChannelFactory<IBeleskaDB>(binding, new EndpointAddress("net.tcp://localhost:51000/BeleskaConnection"));
             proxyBeleska = factory.CreateChannel();
 
-            beleskaZaIzmenu = proxyBeleska.uzmiBeleksuPoId(Id);
-            if (beleskaZaIzmenu.Grupe.Contains("Politika"))
+            mojaIzmenjenaBeleska = proxyBeleska.uzmiBeleksuPoId(Id);
+
+            originalBeleska = new Beleska();
+            originalBeleska.Id = mojaIzmenjenaBeleska.Id;
+            originalBeleska.Naslov = mojaIzmenjenaBeleska.Naslov;
+            originalBeleska.Sadrzaj = mojaIzmenjenaBeleska.Sadrzaj;
+
+            if (mojaIzmenjenaBeleska.Grupe.Contains("Politika"))
             {
                 politikaOtkacena = "True";
             }
             else politikaOtkacena = "False";
 
-            if (beleskaZaIzmenu.Grupe.Contains("Zabava"))
+            if (mojaIzmenjenaBeleska.Grupe.Contains("Zabava"))
             {
                 zabavaOtkacena = "True";
             }
             else zabavaOtkacena = "False";
 
-            if (beleskaZaIzmenu.Grupe.Contains("Sport"))
+            if (mojaIzmenjenaBeleska.Grupe.Contains("Sport"))
             {
                 sportOtkacen = "True";
             }

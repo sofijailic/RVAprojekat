@@ -20,10 +20,10 @@ namespace Client.View
     /// </summary>
     public partial class DodajNovuBeleskuView : Window
     {
-        public DodajNovuBeleskuView()
+        public DodajNovuBeleskuView(PocetnaViewModel model)
         {
             InitializeComponent();
-            DataContext = new DodajNovuBeleskuViewModel(this);
+            DataContext = new DodajNovuBeleskuViewModel(this,model);
         }
     }
 }

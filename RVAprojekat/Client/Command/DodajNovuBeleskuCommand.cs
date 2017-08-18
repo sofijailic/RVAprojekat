@@ -1,5 +1,6 @@
 ﻿using Client.View;
 using Client.ViewModel;
+using Common;
 using Common.Data;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,9 @@ namespace Client.Command
     class DodajNovuBeleskuCommand : ClientCommand
     {
         private DodajNovuBeleskuViewModel prozorModel;
-       // private Beleska beleskaZaDodavanjeDodatno;
+        // private Beleska beleskaZaDodavanjeDodatno;
+
+        private Beleska beleskaZaDodavanje;
 
         public DodajNovuBeleskuCommand(DodajNovuBeleskuViewModel proz ) {
             this.prozorModel = proz;
@@ -67,14 +70,19 @@ namespace Client.Command
                 grupe += ";Sport";
             }
 
-            bool uspesnoDodato = prozorModel.proxyBeleska.dodavanjeBeleske(new Beleska()
+            beleskaZaDodavanje = new Beleska()
             {
                 Naslov = naslov,
                 Sadrzaj = sadrzaj,
                 Grupe = grupe
-            });
+            };
 
-            if (uspesnoDodato)
+            Beleska uspesnoDodato = prozorModel.proxyBeleska.dodavanjeBeleske(beleskaZaDodavanje); 
+
+            prozorModel.model.UndoHistory.Add(this);
+            Sesija.listaBeleskiUndo.Add(uspesnoDodato);
+
+            if (uspesnoDodato != null)
             {
                 MessageBox.Show("Uspesno dodato!", "Uspeh");
                 //  viewModel.homeVM.RefreshBeleske();
@@ -85,7 +93,10 @@ namespace Client.Command
 
         public override void UnExecute()
         {
-            throw new NotImplementedException();
+            prozorModel.model.proxyBeleska.obrisiBelesku(Sesija.listaBeleskiUndo[Sesija.listaBeleskiUndo.Count-1].Id); 
+            //prozorModel.model.RefreshBeleske();
+            prozorModel.model.RedoHistory.Add(this);
+            Sesija.listaBeleskiRedo.Add(beleskaZaDodavanje);
         }
     }
 }

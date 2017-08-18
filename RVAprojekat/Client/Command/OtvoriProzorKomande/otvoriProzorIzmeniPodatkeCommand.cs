@@ -22,5 +22,10 @@ namespace Client.Command.OtvoriProzorKomande
             IzmeniPodatkeView view = new IzmeniPodatkeView();
             view.ShowDialog();
         }
+
+        public override void UnExecute()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

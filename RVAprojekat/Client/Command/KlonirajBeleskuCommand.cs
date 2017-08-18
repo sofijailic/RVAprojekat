@@ -19,13 +19,20 @@ namespace Client.Command
 
         public override void Execute(object parameter)
         {
+
+            if (model.selektovanaBeleska == null || model.selektovanaBeleska == "")
+            {
+                MessageBox.Show("Selektujte belesku za izmenu");
+                return;
+            }
+
             int id = Int32.Parse(model.selektovanaBeleska.Split('-')[0]);
             Beleska beleska = model.proxyBeleska.uzmiBeleksuPoId(id);
             Beleska klonirana = beleska.Kloniraj();
-            bool uspesno = model.proxyBeleska.dodavanjeBeleske(klonirana);
+            Beleska uspesno = model.proxyBeleska.dodavanjeBeleske(klonirana);
 
 
-            if (uspesno)
+            if (uspesno!=null)
             {
 
                 MessageBox.Show("Uspesno klonirana  beleska", "Uspeh");

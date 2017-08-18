@@ -82,5 +82,33 @@ namespace Server.Access
                 return (i > 0 ? true : false);
             }
         }
+
+        public List<User> uzmiSveKorisnike()
+        {
+            using (var access=new AccessDB()) {
+
+                var korisnici = access.Users;
+                return (List<User>)korisnici.ToList();
+            }
+        }
+
+        public bool promeniGrupe(User u)
+        {
+            using (var a=new AccessDB()) {
+
+                User us = a.Users.First(x => x.Username == u.Username);
+                us.Grupe = u.Grupe;
+                int i = a.SaveChanges();
+
+               if (i > 0) {
+                    return true;
+                } else
+                {
+                    return false;
+                }
+                
+
+            }
+        }
     }
 }

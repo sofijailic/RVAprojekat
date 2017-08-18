@@ -17,22 +17,38 @@ namespace Client.ViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
+        public IBeleskaDB proxyBeleska;
+        public string selektovanaBeleska { get; set; }
+        public string admin { get; set; }
+
         public List<Beleska> listaBeleski { get; set; }
         public List<string> listaBeleskiPrikaz { get; set; }
 
-        public string admin { get; set; }
-        public IBeleskaDB proxyBeleska;
-        public string selektovanaBeleska { get; set; }
+        public List<ClientCommand> UndoHistory { get; set; }
+        public List<ClientCommand> RedoHistory { get; set; }
+
+
+
 
         public OtvoriProzorDodajKorisnikaCommand otvoriDodaj { get; set; }
+        public otvoriProzorIzmeniPodatkeCommand otvoriPodatke { get; set; }
+        public otvoriProzorIzmeniGrupeKorisnikaCommand otvoriGrupe { get; set; }
+
+
         public otvoriProzorDodajBeleskuCommand otvoriProzorDodajBelesku { get; set; }
         public otvoriProzorIzmeniBeleskuCommand otvoriIzmeni { get; set; }
-        public otvoriProzorIzmeniPodatkeCommand otvoriPodatke { get; set; }
-        
+
+
+        public UndoCommand undoCommand { get; set; }
+        public RedoCommand redoCommand { get; set; }
+
 
         public OsveziBeleskuCommand osvezi { get; set; }
         public ObrisiBeleskuCommand obrisi { get; set; }
         public KlonirajBeleskuCommand kloniraj { get; set; }
+        public PretragaCommand pretraga { get; set; }
+
+
 
         public PocetnaViewModel() {
 
@@ -42,16 +58,27 @@ namespace Client.ViewModel
             }
             else admin = "Hidden";
 
+            this.undoCommand = new UndoCommand(this);
+            this.redoCommand = new RedoCommand(this);
 
+
+          
+            this.RedoHistory = new List<ClientCommand>();
+            this.UndoHistory = new List<ClientCommand>();
+            
 
             this.otvoriDodaj = new OtvoriProzorDodajKorisnikaCommand();
-            this.otvoriProzorDodajBelesku = new otvoriProzorDodajBeleskuCommand();
+            this.otvoriProzorDodajBelesku = new otvoriProzorDodajBeleskuCommand(this);
             this.otvoriIzmeni = new otvoriProzorIzmeniBeleskuCommand(this);
             this.otvoriPodatke = new otvoriProzorIzmeniPodatkeCommand();
+            this.otvoriGrupe = new otvoriProzorIzmeniGrupeKorisnikaCommand(this);
+
+
 
             this.osvezi = new OsveziBeleskuCommand(this);
             this.obrisi = new ObrisiBeleskuCommand(this);
             this.kloniraj = new KlonirajBeleskuCommand(this);
+            this.pretraga = new PretragaCommand(this);
 
             NetTcpBinding binding = new NetTcpBinding();
             binding.TransactionFlow = true;

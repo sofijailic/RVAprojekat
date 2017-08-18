@@ -1,4 +1,5 @@
-﻿using Client.ViewModel;
+﻿using Client.View;
+using Client.ViewModel;
 using Common.Data;
 using System;
 using System.Collections.Generic;
@@ -26,7 +27,7 @@ namespace Client.Command
             }
 
             Object[] parameters = parameter as Object[];
-            if (parameters == null || parameters.Length != 6)
+            if (parameters == null || parameters.Length != 3)
             {
                 MessageBox.Show("Uneti parametri nisu validni", "Neuspeh");
                 return;
@@ -42,32 +43,50 @@ namespace Client.Command
                 }
             }
 
-            if ((bool)parameters[2] == false && (bool)parameters[3] == false && (bool)parameters[4] == false)
+            //if ((bool)parameters[2] == false && (bool)parameters[3] == false && (bool)parameters[4] == false)
+            //{
+            //    MessageBox.Show("Odaberite grupu", "Odaberite grupu");
+            //    return;
+            //}
+
+            //string grupe = "";
+            //if ((bool)parameters[2] == true)
+            //{
+            //    grupe += ";Politika";
+            //}
+            //if ((bool)parameters[3] == true)
+            //{
+            //    grupe += ";Zabava";
+            //}
+            //if ((bool)parameters[4] == true)
+            //{
+            //    grupe += ";Sport";
+            //}
+            
+            try
             {
-                MessageBox.Show("Odaberite grupu", "Odaberite grupu");
+                Beleska beleskaZaProveru = model.proxyBeleska.uzmiBeleksuPoId(model.originalBeleska.Id);
+                if (beleskaZaProveru.Naslov != model.originalBeleska.Naslov || beleskaZaProveru.Sadrzaj != model.originalBeleska.Sadrzaj)
+                {
+                    KonfliktView conflictV = new KonfliktView(model);
+                    conflictV.ShowDialog();
+                    return;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Beleska je u medjuvremenu obrisana");
+                model.proz.Close();
+               //opciono model.model.OsveziPocetnu();
                 return;
             }
 
-            string grupe = "";
-            if ((bool)parameters[2] == true)
-            {
-                grupe += ";Politika";
-            }
-            if ((bool)parameters[3] == true)
-            {
-                grupe += ";Zabava";
-            }
-            if ((bool)parameters[4] == true)
-            {
-                grupe += ";Sport";
-            }
 
             bool uspesno = model.proxyBeleska.izmeniBelesku(new Beleska()
             {
-                Id = Int32.Parse(parameters[5].ToString()),
+                Id = Int32.Parse(parameters[2].ToString()),
                 Naslov = parameters[0].ToString(),
-                Sadrzaj = parameters[1].ToString(),
-                Grupe = grupe
+                Sadrzaj = parameters[1].ToString()
             });
 
             if (uspesno)

@@ -14,5 +14,10 @@ namespace Client.Command.OtvoriProzorKomande
             DodajNovogKorisnikaView prozorDodajKorisnika = new DodajNovogKorisnikaView();
             prozorDodajKorisnika.ShowDialog();
         }
+
+        public override void UnExecute()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
