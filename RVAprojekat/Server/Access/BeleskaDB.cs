@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Server.Lock;
+
 
 namespace Server.Access
 {
@@ -30,111 +32,139 @@ namespace Server.Access
 
         public Beleska dodavanjeBeleske(Beleska newBeleska)
         {
-            using (var access = new AccessDB())
-            {
-                var beleske = access.Beleske;
-
-                access.Beleske.Add(newBeleska);
-                int uspesno = access.SaveChanges();
-
-                if (uspesno > 0)
+            lock (Lock.Lock.lockBeleska) {
+                using (var access = new AccessDB())
                 {
-                    return newBeleska;
-                }
-                else return null;
+                    var beleske = access.Beleske;
 
+                    access.Beleske.Add(newBeleska);
+                    int uspesno = access.SaveChanges();
+
+                    if (uspesno > 0)
+                    {
+                        return newBeleska;
+                    }
+                    else return null;
+
+                }
             }
+            
         }
 
         public bool izmeniBelesku(Beleska beleska)
         {
-            using (var access = new AccessDB())
+            lock (Lock.Lock.lockBeleska)
             {
-                Beleska bel = access.Beleske.First(x => x.Id == beleska.Id);
-                bel.Naslov = beleska.Naslov;
-                bel.Sadrzaj = beleska.Sadrzaj;
-                int i = access.SaveChanges();
+                using (var access = new AccessDB())
+                {
+                    Beleska bel = access.Beleske.First(x => x.Id == beleska.Id);
+                    bel.Naslov = beleska.Naslov;
+                    bel.Sadrzaj = beleska.Sadrzaj;
+                    int i = access.SaveChanges();
 
-                return (i > 0 ? true : false);
+                    return (i > 0 ? true : false);
+                }
+
             }
+               
         }
 
         public bool obrisiBelesku(int id)
         {
-            using (var access = new AccessDB())
+            lock (Lock.Lock.lockBeleska)
             {
-                var beleske = access.Beleske;
-
-                foreach (var item in beleske)
+                using (var access = new AccessDB())
                 {
-                    if (item.Id == id)
+                    var beleske = access.Beleske;
+
+                    foreach (var item in beleske)
                     {
-                        access.Beleske.Remove(item);
-                        break;
+                        if (item.Id == id)
+                        {
+                            access.Beleske.Remove(item);
+                            break;
+                        }
                     }
+
+                    int i = access.SaveChanges();
+                    if (i > 0)
+                    {
+                        return true;
+                    }
+                    else
+                        return false;
                 }
 
-                int i = access.SaveChanges();
-                if (i > 0)
-                {
-                    return true;
-                }
-                else
-                    return false;
+
             }
 
         }
 
         public Beleska uzmiBeleksuPoId(int id)
-        { 
-            using (var access = new AccessDB())
-            {
-                var beleske = access.Beleske;
+        {
 
-                foreach (var beleska in beleske)
+            lock (Lock.Lock.lockBeleska)
+            {
+                using (var access = new AccessDB())
                 {
-                    if (beleska.Id == id)
+                    var beleske = access.Beleske;
+
+                    foreach (var beleska in beleske)
                     {
-                        return beleska;
+                        if (beleska.Id == id)
+                        {
+                            return beleska;
+                        }
                     }
                 }
+                return null;
             }
-            return null;
+               
         
     }
 
         public List<Beleska> uzmiBeleskeOdKorisnika(User u)
         {
-            List<Beleska> listaBeleski = new List<Beleska>();
-            string[] korisnickeGrupe = u.Grupe.Split(';');
-            using (var access = new AccessDB())
+            lock (Lock.Lock.lockBeleska)
             {
-                var beleske = access.Beleske;
-
-                foreach (var beleska in beleske)
+                List<Beleska> listaBeleski = new List<Beleska>();
+                string[] korisnickeGrupe = u.Grupe.Split(';');
+                using (var access = new AccessDB())
                 {
-                    foreach (string grupa in korisnickeGrupe)
+                    var beleske = access.Beleske;
+
+                    foreach (var beleska in beleske)
                     {
-                        if (beleska.Grupe.Contains(grupa))
+                        foreach (string grupa in korisnickeGrupe)
                         {
-                            listaBeleski.Add(beleska);
-                            break;
+                            if (beleska.Grupe.Contains(grupa))
+                            {
+                                listaBeleski.Add(beleska);
+                                break;
+                            }
                         }
                     }
+
                 }
 
-            }
+                return listaBeleski;
 
-            return listaBeleski;
+            }
+              
         }
 
         public List<Beleska> uzmiSveBeleske()
         {
-            using (var access = new AccessDB())
+            lock (Lock.Lock.lockBeleska)
             {
-                var beleske = access.Beleske;
-                return (List<Beleska>)beleske.ToList();
+                using (var access = new AccessDB())
+                {
+                    var beleske = access.Beleske;
+                    return (List<Beleska>)beleske.ToList();
+                }
+
             }
+               
         }
     }
 }
