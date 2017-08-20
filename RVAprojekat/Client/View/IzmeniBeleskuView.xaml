@@ -19,8 +19,8 @@
         <Label x:Name="label1" Content="Id" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top" Width="64"/>
         <Label x:Name="label2" Content="Naslov" HorizontalAlignment="Left" Margin="10,87,0,0" VerticalAlignment="Top" Height="25" Width="64"/>
         <Label x:Name="label3" Content="Sadrzaj" HorizontalAlignment="Left" Margin="5,155,0,0" VerticalAlignment="Top" Height="24" Width="64"/>
-        <TextBox x:Name="textBoxId" IsEnabled="False" Text="{Binding beleskaZaIzmenu.Id}" HorizontalAlignment="Left" Height="23" Margin="74,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBoxNaslov" Text="{Binding beleskaZaIzmenu.Naslov}" HorizontalAlignment="Left" Height="23" Margin="74,96,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBoxId" IsEnabled="False" Text="{Binding mojaIzmenjenaBeleska.Id}" HorizontalAlignment="Left" Height="23" Margin="74,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBoxNaslov" Text="{Binding mojaIzmenjenaBeleska.Naslov}" HorizontalAlignment="Left" Height="23" Margin="74,96,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
         <Button x:Name="button" Content="Izmeni belesku" Command="{Binding izmena}" HorizontalAlignment="Left" Margin="10,298,0,0" VerticalAlignment="Top" Width="112">
             <Button.CommandParameter>
                 <MultiBinding Converter="{StaticResource multiCloner}">
@@ -31,7 +31,7 @@
             </Button.CommandParameter>
 
         </Button>
-        <toolkit:RichTextBox Text="{Binding beleskaZaIzmenu.Sadrzaj,Mode=TwoWay}" x:Name="richTextBox" HorizontalAlignment="Left" Height="122" Margin="74,157,0,0" VerticalAlignment="Top" Width="386"/>
+        <toolkit:RichTextBox Text="{Binding mojaIzmenjenaBeleska.Sadrzaj,Mode=TwoWay}" x:Name="richTextBox" HorizontalAlignment="Left" Height="122" Margin="74,157,0,0" VerticalAlignment="Top" Width="386"/>
 
         <ToolBar x:Name="toolBar" HorizontalAlignment="Left" Margin="90,127,0,0" VerticalAlignment="Top" Width="144" Height="25" RenderTransformOrigin="0.514,1.271">
             <ToggleButton Command="EditingCommands.ToggleBold" Name="btnBold" Content="Bold"/>

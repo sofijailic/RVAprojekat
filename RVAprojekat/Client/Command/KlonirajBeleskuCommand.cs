@@ -30,7 +30,7 @@ namespace Client.Command
             Beleska beleska = model.proxyBeleska.uzmiBeleksuPoId(id);
             Beleska klonirana = beleska.Kloniraj();
             Beleska uspesno = model.proxyBeleska.dodavanjeBeleske(klonirana);
-
+            model.OsveziPocetnu();
 
             if (uspesno!=null)
             {

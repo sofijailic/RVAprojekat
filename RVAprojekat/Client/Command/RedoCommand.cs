@@ -37,7 +37,7 @@ namespace Client.Command
                 beleskaCommand.Execute(parametri);
                 model.RedoHistory.Remove(beleskaCommand);
                 Sesija.listaBeleskiRedo.RemoveAt(Sesija.listaBeleskiRedo.Count - 1);
-                //model.RefreshBeleske();
+                model.OsveziPocetnu();
             }
         }
 

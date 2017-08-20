@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Client.App" Collapsed="true">
+    <Position X="43.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.MainWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="43.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Client.Command.ClientCommand" Collapsed="true">
+    <Position X="20.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAACAAQAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Command\ClientCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Client.Command.DodajNovogKorisnikaCommand" Collapsed="true">
+    <Position X="16.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Command\DodajNovogKorisnikaCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.Command.DodajNovuBeleskuCommand" Collapsed="true">
+    <Position X="23" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAQAAAAEAAAAAAAABAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Command\DodajNovuBeleskuCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.Command.IzmeniBeleskuCommand" Collapsed="true">
+    <Position X="29.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Command\IzmeniBeleskuCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.Command.IzmeniGrupeCommand" Collapsed="true">
+    <Position X="36.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Command\IzmeniGrupeCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.Command.IzmeniPodatkeCommand" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Command\IzmeniPodatkeCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.Command.KlonirajBeleskuCommand" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Command\KlonirajBeleskuCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.Command.LoginCommand" Collapsed="true">
+    <Position X="11.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAQAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Command\LoginCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.Command.ObrisiBeleskuCommand" Collapsed="true">
+    <Position X="18.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAQAAAAAAAAAAAAAIAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Command\ObrisiBeleskuCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.Command.OdbaciSvojeIzmeneCommand" Collapsed="true">
+    <Position X="25.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Command\OdbaciSvojeIzmeneCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.Command.OsveziBeleskuCommand" Collapsed="true">
+    <Position X="32" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Command\OsveziBeleskuCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.Command.PregaziTudjeIzmeneCommand" Collapsed="true">
+    <Position X="38.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAgAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Command\PregaziTudjeIzmeneCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.Command.PretragaCommand" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Command\PretragaCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.Command.RedoCommand" Collapsed="true">
+    <Position X="9.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Command\RedoCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.Command.UndoCommand" Collapsed="true">
+    <Position X="14" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Command\UndoCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.Command.OtvoriProzorKomande.otvoriProzorDodajBeleskuCommand" Collapsed="true">
+    <Position X="20.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Command\OtvoriProzorKomande\otvoriProzorDodajBeleskuCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.Command.OtvoriProzorKomande.OtvoriProzorDodajKorisnikaCommand" Collapsed="true">
+    <Position X="27.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Command\OtvoriProzorKomande\OtvoriProzorDodajKorisnikaCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.Command.OtvoriProzorKomande.otvoriProzorIzmeniBeleskuCommand" Collapsed="true">
+    <Position X="34.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Command\OtvoriProzorKomande\otvoriProzorIzmeniBeleskuCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.Command.OtvoriProzorKomande.otvoriProzorIzmeniGrupeKorisnikaCommand" Collapsed="true">
+    <Position X="41" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Command\OtvoriProzorKomande\otvoriProzorIzmeniGrupeKorisnikaCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.Command.OtvoriProzorKomande.otvoriProzorIzmeniPodatkeCommand" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Command\OtvoriProzorKomande\otvoriProzorIzmeniPodatkeCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.Converter.MultiCloneConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="45.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converter\MultiCloneConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Client.Properties.Resources" Collapsed="true">
+    <Position X="50.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.Properties.Settings" Collapsed="true">
+    <Position X="43.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.View.DodajNovogKorisnikaView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="47" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\DodajNovogKorisnikaView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Client.View.DodajNovuBeleskuView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="48.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\DodajNovuBeleskuView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Client.View.IzmeniBeleskuView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="43.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\IzmeniBeleskuView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Client.View.IzmeniGrupeKorisnikaView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="47" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\IzmeniGrupeKorisnikaView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Client.View.IzmeniPodatkeView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="50.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\IzmeniPodatkeView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Client.View.KonfliktView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="45.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\KonfliktView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Client.View.LoginView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="48.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\LoginView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Client.View.PocetnaView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="47" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\PocetnaView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Client.ViewModel.DodajKorisnikaViewModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="45.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAgAAAAAACAAAAAAAQgAA=</HashCode>
+      <FileName>ViewModel\DodajKorisnikaViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Client.ViewModel.DodajNovuBeleskuViewModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="50.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAIAAAAAABgAAAAAACIAACBAAIAAA=</HashCode>
+      <FileName>ViewModel\DodajNovuBeleskuViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Client.ViewModel.IzmeniBeleskuViewModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="45.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CgACAAAAAAAAAAAAJAAAAAABgAAAAABAAEFABAQoAAA=</HashCode>
+      <FileName>ViewModel\IzmeniBeleskuViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Client.ViewModel.IzmeniGrupeKorisnikaViewModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="48.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAQIAAAAAAAgAQAAAACAAAAAAAQAAA=</HashCode>
+      <FileName>ViewModel\IzmeniGrupeKorisnikaViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Client.ViewModel.IzmeniPodatkeViewModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="43.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAIAAAAAAAggAAAAACAAAAAAAQAAA=</HashCode>
+      <FileName>ViewModel\IzmeniPodatkeViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Client.ViewModel.KonfliktViewModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="47" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAgAAAAAAAAQAAAAEEAAA=</HashCode>
+      <FileName>ViewModel\KonfliktViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Client.ViewModel.LoginViewModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="50.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAgAAAAAAAAIAAAAAQAAA=</HashCode>
+      <FileName>ViewModel\LoginViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Client.ViewModel.PocetnaViewModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="48.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEEQoAGEAAAAAIAAAgBApwAEAQAAAACIAAAAAAAI=</HashCode>
+      <FileName>ViewModel\PocetnaViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

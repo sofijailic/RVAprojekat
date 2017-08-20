@@ -12,55 +12,56 @@
     <Window.Resources>
         <converter:MultiCloneConverter x:Key="multiCloner"/>
     </Window.Resources>
-        <Grid Margin="0,77,0,-77">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="93*"/>
-                <ColumnDefinition Width="15*"/>
-                <ColumnDefinition Width="21*"/>
-                <ColumnDefinition Width="101*"/>
-                <ColumnDefinition Width="454*"/>
-                <ColumnDefinition Width="0*"/>
-                <ColumnDefinition Width="225*"/>
-                <ColumnDefinition Width="34*"/>
-            </Grid.ColumnDefinitions>
-            <Button x:Name="button" Content="Dodaj belesku" Command="{Binding otvoriProzorDodajBelesku}" HorizontalAlignment="Left" Margin="16,10,0,0" VerticalAlignment="Top" Width="120" Height="29" Grid.ColumnSpan="4"/>
-            <Button x:Name="button1" Command="{Binding obrisi}" Content="Obrisi belesku" HorizontalAlignment="Left" Margin="16,52,0,0" VerticalAlignment="Top" Width="120" Height="29" Grid.ColumnSpan="4"/>
-            <Button x:Name="button2" Command="{Binding otvoriIzmeni}" Content="Izmeni belesku" HorizontalAlignment="Left" Margin="16,88,0,0" VerticalAlignment="Top" Width="120" Height="29" RenderTransformOrigin="1.795,1.989" Grid.ColumnSpan="4"/>
-            <Button x:Name="button3" Command="{Binding otvoriPodatke}" Content="Izmeni podatke korisniku" HorizontalAlignment="Left" Margin="46,10,0,0" VerticalAlignment="Top" Width="161" Height="29" Grid.Column="6"/>
-            <Button x:Name="button4" Command="{Binding kloniraj}" Content="Dupliraj belesku" HorizontalAlignment="Left" Margin="16,122,0,0" VerticalAlignment="Top" Width="120" Height="29" Grid.ColumnSpan="4"/>
-            <Button x:Name="button6" Command="{Binding undoCommand}" Content="Undo" HorizontalAlignment="Left" Margin="33,10,0,0" VerticalAlignment="Top" Width="92" Height="29" Grid.Column="3" Grid.ColumnSpan="2"/>
-            <Button x:Name="button7" Command="{Binding redoCommand}" Content="Redo" HorizontalAlignment="Left" Margin="33,52,0,0" VerticalAlignment="Top" Width="92" Height="29" Grid.Column="3" Grid.ColumnSpan="2"/>
-            <Button x:Name="button8" Command="{Binding osvezi}" Content="Osvezi beleske" HorizontalAlignment="Left" Margin="10,165,0,0" VerticalAlignment="Top" Width="92" Height="29" Grid.ColumnSpan="2" Grid.Column="2"/>
-            <Button x:Name="button9" Visibility="{Binding admin}" Content="Dodaj korisnika" Command="{Binding otvoriDodaj}"  HorizontalAlignment="Left" Margin="46,-27,0,0" VerticalAlignment="Top" Width="161" Height="29" Grid.Column="6"/>
-            <Button x:Name="button10" Command="{Binding otvoriGrupe}" Visibility="{Binding admin}" Content="Izmeni grupe korisnika" HorizontalAlignment="Left" Margin="46,52,0,0" VerticalAlignment="Top" Width="161" Height="29" Grid.Column="6"/>
-            <Label x:Name="label" Content="                                    PISANJE BELESKI" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Margin="50,-72,0,0" VerticalAlignment="Top" Height="37" Width="522" Grid.Column="3" Grid.ColumnSpan="4"/>
-            <ListBox x:Name="listBox" SelectedValue="{Binding selektovanaBeleska}" ItemsSource="{Binding listaBeleskiPrikaz, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="173" Margin="10,327,0,0" VerticalAlignment="Top" Width="714" Grid.ColumnSpan="7">
-                <i:Interaction.Triggers>
-                    <i:EventTrigger EventName="MouseDoubleClick">
-                        <i:InvokeCommandAction Command="{Binding otvoriIzmeni}"/>
-                    </i:EventTrigger>
-                </i:Interaction.Triggers>
-            </ListBox>
-            <Label x:Name="label1" Content="Pretraga/  po nazivu  /  po grupi  /mesovita"  FontWeight="Bold" HorizontalAlignment="Left" Margin="19,205,0,0" VerticalAlignment="Top" Width="348" Grid.ColumnSpan="5"/>
-            <Label x:Name="label2" Content="Unesite naslov" HorizontalAlignment="Left" Margin="40,236,0,0" VerticalAlignment="Top" Width="104" Grid.ColumnSpan="4"/>
-            <Label x:Name="label3" Content="Izaberite grupu" HorizontalAlignment="Left" Margin="40,267,0,0" VerticalAlignment="Top" Width="104" Grid.ColumnSpan="4"/>
-            <TextBox x:Name="tbNaslov" HorizontalAlignment="Left" Height="23" Margin="53,239,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.267,0.087" Grid.Column="3" Grid.ColumnSpan="2"/>
-            <CheckBox x:Name="cbPolitika" Content="Politika" HorizontalAlignment="Left" Margin="53,277,0,0" VerticalAlignment="Top" Grid.Column="3" Grid.ColumnSpan="2"/>
-            <CheckBox x:Name="cbZabava" Content="Zabava" HorizontalAlignment="Left" Margin="38,277,0,0" VerticalAlignment="Top" Grid.Column="4"/>
-            <CheckBox x:Name="cbSport" Content="Sport" HorizontalAlignment="Left" Margin="145,277,0,0" VerticalAlignment="Top" Grid.Column="4"/>
-            <Button x:Name="button5" Content="pretrazi" Command="{Binding pretraga}" HorizontalAlignment="Left" Margin="332,251,0,0" VerticalAlignment="Top" Width="75" Grid.Column="4">
-                <Button.CommandParameter>
-                    <MultiBinding Converter="{StaticResource multiCloner}">
-                        <Binding Path="Text" ElementName="tbNaslov"/>
-                        <Binding Path="IsChecked" ElementName="cbPolitika"/>
-                        <Binding Path="IsChecked" ElementName="cbZabava"/>
-                        <Binding Path="IsChecked" ElementName="cbSport"/>
-                    </MultiBinding>
-                </Button.CommandParameter>
-            </Button>
-            <Label x:Name="label4" Content="Izaberite operaciju" FontWeight="Bold" HorizontalAlignment="Left" Margin="16,-27,0,0" VerticalAlignment="Top" Grid.ColumnSpan="4" Width="134"/>
-            <Label x:Name="label4_Copy" Content="Spisak beleski:" FontWeight="Bold" HorizontalAlignment="Left" Margin="10,292,0,0" VerticalAlignment="Top" Grid.ColumnSpan="4" Width="134"/>
+    <Grid Margin="0,77,0,-77">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="94*"/>
+            <ColumnDefinition Width="15*"/>
+            <ColumnDefinition Width="21*"/>
+            <ColumnDefinition Width="101*"/>
+            <ColumnDefinition Width="455*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="99*"/>
+            <ColumnDefinition Width="126*"/>
+            <ColumnDefinition Width="34*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="button" Content="Dodaj belesku" Command="{Binding otvoriProzorDodajBelesku}" HorizontalAlignment="Left" Margin="16,10,0,0" VerticalAlignment="Top" Width="120" Height="29" Grid.ColumnSpan="4"/>
+        <Button x:Name="button1" Command="{Binding obrisi}" Content="Obrisi belesku" HorizontalAlignment="Left" Margin="16,52,0,0" VerticalAlignment="Top" Width="120" Height="29" Grid.ColumnSpan="4"/>
+        <Button x:Name="button2" Command="{Binding otvoriIzmeni}" Content="Izmeni belesku" HorizontalAlignment="Left" Margin="16,88,0,0" VerticalAlignment="Top" Width="120" Height="29" RenderTransformOrigin="1.795,1.989" Grid.ColumnSpan="4"/>
+        <Button x:Name="button3" Command="{Binding otvoriPodatke}" Content="Izmeni podatke korisniku" HorizontalAlignment="Left" Margin="46,10,0,0" VerticalAlignment="Top" Width="161" Height="29" Grid.Column="6" Grid.ColumnSpan="2"/>
+        <Button x:Name="button4" Command="{Binding kloniraj}" Content="Dupliraj belesku" HorizontalAlignment="Left" Margin="16,122,0,0" VerticalAlignment="Top" Width="120" Height="29" Grid.ColumnSpan="4"/>
+        <Button x:Name="button6" Command="{Binding undoCommand}" Content="Undo" HorizontalAlignment="Left" Margin="33,10,0,0" VerticalAlignment="Top" Width="92" Height="29" Grid.Column="3" Grid.ColumnSpan="2"/>
+        <Button x:Name="button7" Command="{Binding redoCommand}" Content="Redo" HorizontalAlignment="Left" Margin="33,52,0,0" VerticalAlignment="Top" Width="92" Height="29" Grid.Column="3" Grid.ColumnSpan="2"/>
+        <Button x:Name="button8" Command="{Binding osvezi}" Content="Osvezi beleske" HorizontalAlignment="Left" Margin="10,165,0,0" VerticalAlignment="Top" Width="92" Height="29" Grid.ColumnSpan="2" Grid.Column="2"/>
+        <Button x:Name="button9" Visibility="{Binding admin}" Content="Dodaj korisnika" Command="{Binding otvoriDodaj}"  HorizontalAlignment="Left" Margin="46,-27,0,0" VerticalAlignment="Top" Width="161" Height="29" Grid.Column="6" Grid.ColumnSpan="2"/>
+        <Button x:Name="button10" Command="{Binding otvoriGrupe}" Visibility="{Binding admin}" Content="Izmeni grupe korisnika" HorizontalAlignment="Left" Margin="46,52,0,0" VerticalAlignment="Top" Width="161" Height="29" Grid.Column="6" Grid.ColumnSpan="2"/>
+        <Label x:Name="label" Content="                                    PISANJE BELESKI" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Margin="50,-72,0,0" VerticalAlignment="Top" Height="37" Width="522" Grid.Column="3" Grid.ColumnSpan="4"/>
+        <ListBox x:Name="listBox" SelectedValue="{Binding selektovanaBeleska}" ItemsSource="{Binding listaBeleskiPrikaz, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="173" Margin="10,327,0,0" VerticalAlignment="Top" Width="714" Grid.ColumnSpan="7">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseDoubleClick">
+                    <i:InvokeCommandAction Command="{Binding otvoriIzmeni}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </ListBox>
+        <Label x:Name="label1" Content="Pretraga/  po nazivu  /  po grupi  /mesovita"  FontWeight="Bold" HorizontalAlignment="Left" Margin="19,205,0,0" VerticalAlignment="Top" Width="348" Grid.ColumnSpan="5"/>
+        <Label x:Name="label2" Content="Unesite naslov" HorizontalAlignment="Left" Margin="40,236,0,0" VerticalAlignment="Top" Width="104" Grid.ColumnSpan="4"/>
+        <Label x:Name="label3" Content="Izaberite grupu" HorizontalAlignment="Left" Margin="40,267,0,0" VerticalAlignment="Top" Width="104" Grid.ColumnSpan="4"/>
+        <TextBox x:Name="tbNaslov" HorizontalAlignment="Left" Height="23" Margin="53,239,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.267,0.087" Grid.Column="3" Grid.ColumnSpan="2"/>
+        <CheckBox x:Name="cbPolitika" Content="Politika" HorizontalAlignment="Left" Margin="53,277,0,0" VerticalAlignment="Top" Grid.Column="3" Grid.ColumnSpan="2"/>
+        <CheckBox x:Name="cbZabava" Content="Zabava" HorizontalAlignment="Left" Margin="38,277,0,0" VerticalAlignment="Top" Grid.Column="4"/>
+        <CheckBox x:Name="cbSport" Content="Sport" HorizontalAlignment="Left" Margin="145,277,0,0" VerticalAlignment="Top" Grid.Column="4"/>
+        <Button x:Name="button5" Content="pretrazi" Command="{Binding pretraga}" HorizontalAlignment="Left" Margin="332,251,0,0" VerticalAlignment="Top" Width="75" Grid.Column="4">
+            <Button.CommandParameter>
+                <MultiBinding Converter="{StaticResource multiCloner}">
+                    <Binding Path="Text" ElementName="tbNaslov"/>
+                    <Binding Path="IsChecked" ElementName="cbPolitika"/>
+                    <Binding Path="IsChecked" ElementName="cbZabava"/>
+                    <Binding Path="IsChecked" ElementName="cbSport"/>
+                </MultiBinding>
+            </Button.CommandParameter>
+        </Button>
+        <Label x:Name="label4" Content="Izaberite operaciju" FontWeight="Bold" HorizontalAlignment="Left" Margin="16,-27,0,0" VerticalAlignment="Top" Grid.ColumnSpan="4" Width="134"/>
+        <Label x:Name="label4_Copy" Content="Spisak beleski:" FontWeight="Bold" HorizontalAlignment="Left" Margin="10,292,0,0" VerticalAlignment="Top" Grid.ColumnSpan="4" Width="134"/>
 
-        </Grid>
-    
+    </Grid>
+
 </Window>

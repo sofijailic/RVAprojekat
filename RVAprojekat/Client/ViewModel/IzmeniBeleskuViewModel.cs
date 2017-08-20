@@ -59,6 +59,7 @@ namespace Client.ViewModel
             originalBeleska.Naslov = mojaIzmenjenaBeleska.Naslov;
             originalBeleska.Sadrzaj = mojaIzmenjenaBeleska.Sadrzaj;
 
+            /*
             if (mojaIzmenjenaBeleska.Grupe.Contains("Politika"))
             {
                 politikaOtkacena = "True";
@@ -78,7 +79,7 @@ namespace Client.ViewModel
             else sportOtkacen = "False";
 
 
-
+    
             if (Sesija.trenutniKorisnik.Grupe.Contains("Politika"))
             {
                 politikaDostupna = "True";
@@ -96,7 +97,7 @@ namespace Client.ViewModel
                 sportDostupan = "True";
             }
             else sportDostupan = "False";
-
+            */
         }
 
         public void OnPropertyChanged(PropertyChangedEventArgs e)

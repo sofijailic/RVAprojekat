@@ -43,26 +43,7 @@ namespace Client.Command
                 }
             }
 
-            //if ((bool)parameters[2] == false && (bool)parameters[3] == false && (bool)parameters[4] == false)
-            //{
-            //    MessageBox.Show("Odaberite grupu", "Odaberite grupu");
-            //    return;
-            //}
-
-            //string grupe = "";
-            //if ((bool)parameters[2] == true)
-            //{
-            //    grupe += ";Politika";
-            //}
-            //if ((bool)parameters[3] == true)
-            //{
-            //    grupe += ";Zabava";
-            //}
-            //if ((bool)parameters[4] == true)
-            //{
-            //    grupe += ";Sport";
-            //}
-            
+          
             try
             {
                 Beleska beleskaZaProveru = model.proxyBeleska.uzmiBeleksuPoId(model.originalBeleska.Id);
@@ -77,7 +58,7 @@ namespace Client.Command
             {
                 MessageBox.Show("Beleska je u medjuvremenu obrisana");
                 model.proz.Close();
-               //opciono model.model.OsveziPocetnu();
+               
                 return;
             }
 
@@ -93,9 +74,14 @@ namespace Client.Command
             {
                 MessageBox.Show("Beleska uspesno izmenjena", "Uspeh");
                 model.proz.Close();
-              
+                model.model.OsveziPocetnu();
+
             }
-            else MessageBox.Show("Beleska neuspesno izmenjena", "Neuspeh");
+            else {
+                MessageBox.Show("Niste izmenili belesku", "Neuspeh");
+                model.proz.Close();
+                model.model.OsveziPocetnu();
+            } 
         }
 
         public override void UnExecute()

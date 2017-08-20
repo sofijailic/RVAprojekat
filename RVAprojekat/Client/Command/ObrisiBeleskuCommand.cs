@@ -45,7 +45,7 @@ namespace Client.Command
             beleskaZaBrisanje = model.proxyBeleska.uzmiBeleksuPoId(id);
             //Globals.listaObrisanih.Add(beleskaZaBrisanje);
             model.proxyBeleska.obrisiBelesku(id);
-            //model.OsveziPocetnu();
+            model.OsveziPocetnu();
             model.UndoHistory.Add(this);
             Sesija.listaBeleskiUndo.Add(beleskaZaBrisanje);
         }

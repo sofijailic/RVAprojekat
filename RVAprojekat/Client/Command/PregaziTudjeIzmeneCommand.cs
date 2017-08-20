@@ -30,14 +30,15 @@ namespace Client.Command
                 MessageBox.Show("Uspesno pregazene izmene", "Uspeh");
                 modelKonfliktni.view.Close();
                 modelKonfliktni.modelIzmeneBeleske.proz.Close();
-                //viewModel.viewModel.homeVM.RefreshBeleske();
+                modelKonfliktni.modelIzmeneBeleske.model.OsveziPocetnu();
+                
             }
             else
             {
                 MessageBox.Show("Neuspesno pregazene izmene", "Neuspeh");
                 modelKonfliktni.view.Close();
                 modelKonfliktni.modelIzmeneBeleske.proz.Close();
-                //viewModel.viewModel.homeVM.RefreshBeleske();
+                modelKonfliktni.modelIzmeneBeleske.model.OsveziPocetnu();
             }
         }
 

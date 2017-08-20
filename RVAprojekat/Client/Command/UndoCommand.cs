@@ -30,6 +30,7 @@ namespace Client.Command
                 beleskaCommand.UnExecute();
                 model.UndoHistory.Remove(beleskaCommand);
                 Sesija.listaBeleskiUndo.RemoveAt(Sesija.listaBeleskiUndo.Count - 1);
+                model.OsveziPocetnu();
             }
         }
 

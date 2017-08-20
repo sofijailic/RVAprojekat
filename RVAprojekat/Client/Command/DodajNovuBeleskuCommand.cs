@@ -14,6 +14,7 @@ namespace Client.Command
     class DodajNovuBeleskuCommand : ClientCommand
     {
         private DodajNovuBeleskuViewModel prozorModel;
+        public PocetnaViewModel pocetniModel;
         // private Beleska beleskaZaDodavanjeDodatno;
 
         private Beleska beleskaZaDodavanje;
@@ -85,7 +86,8 @@ namespace Client.Command
             if (uspesnoDodato != null)
             {
                 MessageBox.Show("Uspesno dodato!", "Uspeh");
-                //  viewModel.homeVM.RefreshBeleske();
+                
+                prozorModel.model.OsveziPocetnu();
                 prozorModel.prozor.Close();
             }
             else MessageBox.Show("Neuspesno dodato!", "Neuspeh");
